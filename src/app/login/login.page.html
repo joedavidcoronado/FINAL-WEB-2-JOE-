@@ -1,0 +1,54 @@
+<ion-content class="ion-padding" style="text-align: center;">
+<ion-img
+  src="../../assets/aja.webp"
+  alt="Logo"
+  style="width: 100px; height: auto; margin: 20px auto;"
+></ion-img>
+
+<ion-card>
+  <ion-card-content>
+    <form (ngSubmit)="onLogin()">
+      <ion-item>
+        <ion-label position="stacked">Correo</ion-label>
+        <ion-input
+          type="email"
+          placeholder="Ingresa tu correo"
+          [(ngModel)]="user"
+          name="user" 
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Contraseña</ion-label>
+        <ion-input
+          type="password"
+          placeholder="Ingresa tu contraseña"
+          [(ngModel)]="password"
+          name="password" 
+          required
+        ></ion-input>
+      </ion-item>
+
+      <!-- Mostrar mensaje de error si ocurre un problema -->
+      <ion-text color="danger" *ngIf="errorMessage">
+        <p>{{ errorMessage }}</p>
+      </ion-text>
+
+      <ion-button
+        expand="block"
+        type="submit"
+        style="margin-top: 20px;"
+        background-color= red>
+        Iniciar Sesión
+      </ion-button>
+    </form>
+  </ion-card-content>
+</ion-card>
+
+<p style="margin-top: 20px; color: black; font-size: 0.9rem;">
+  ¿No tienes cuenta? 
+  <a routerLink="/singup" style="color: black; font-weight: bold; text-decoration: none;">
+    Haz click acá
+  </a>
+</p>
+</ion-content>

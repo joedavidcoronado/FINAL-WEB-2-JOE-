@@ -1,0 +1,7 @@
+{
+  "name": "final-web-2-joe",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

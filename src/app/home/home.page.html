@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="color: red;">
+      Lugares
+    </ion-title>
+    <ion-buttons slot="end" style="margin-right: 20px; margin-left: 10px;">
+      <ion-label class="user-info">
+        {{ userName }}
+        <br />
+        <small>{{ userEmail }}</small>
+      </ion-label>
+      <ion-icon name="person-circle" slot="end" style="color: red; font-size: 28px; margin-right: 10px;"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list *ngIf="lugares.length > 0; else noLugares">
+    <ion-item *ngFor="let lugar of lugares">
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <img
+        [src] = "lugar.fotos[0]?.url || '../assets/placeHolder.png'"
+        alt="Logo"
+        style="width: 100px; height: auto; margin-right: 20px;"
+      >
+      <ion-button color="primary" (click)="editarLugar(lugar.id.toString())" style="margin-right: 18px;">
+        Editar
+      </ion-button>
+      </div>
+      <ion-label>
+        <h2>{{lugar.nombre}}</h2>
+        <p>{{lugar.descripcion}}</p>
+        <p>{{lugar.ciudad}}</p>
+        <p><strong>Precio por noche:</strong> {{lugar.precioNoche}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noLugares>
+    <ion-text color="medium">
+      <p>No hay lugares disponibles.</p>
+    </ion-text>
+  </ng-template>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" (click)="agregarLugar()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" style="margin-bottom: 70px;">
+    <ion-fab-button color="danger" (click)="verReservas()">
+      <ion-icon name="list"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

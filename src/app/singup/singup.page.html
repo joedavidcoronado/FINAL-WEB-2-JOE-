@@ -1,0 +1,69 @@
+<ion-content class="ion-padding" style="text-align: center;">
+
+    <ion-img
+      src="../../assets/aja.webp"
+      alt="Logo"
+      style="width: 100px; height: auto; margin: 20px auto;"
+    ></ion-img>
+  
+    <ion-card>
+      <ion-card-content>
+        <form>
+          <ion-item>
+            <ion-label position="stacked">Correo</ion-label>
+            <ion-input
+              type="email"
+              placeholder="Ingresa tu correo"
+              required
+            ></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="stacked">Nombre Completo</ion-label>
+            <ion-input
+              type="text"
+              placeholder="Ingresa tu nombre completo"
+              required
+            ></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="stacked">Contraseña</ion-label>
+            <ion-input
+              type="password"
+              placeholder="Ingresa tu contraseña"
+              required
+            ></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="stacked">Teléfono</ion-label>
+            <ion-input
+              type="tel"
+              placeholder="Ingresa tu teléfono"
+              required
+            ></ion-input>
+          </ion-item>
+  
+          <ion-button
+            expand="block"
+            type="submit"
+            style="margin-top: 20px;"
+  
+            [routerLink]="['/login']" routerLinkActive="selected"
+          >
+            Registrarse
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  
+    <p style="margin-top: 20px; color: black; font-size: 0.9rem;">
+      ¿Ya tienes usuario? 
+      <a routerLink="/login" style="color: black; font-weight: bold; text-decoration: none;">
+        Haz click aquí
+      </a>
+    </p>
+  
+  </ion-content>
+  
